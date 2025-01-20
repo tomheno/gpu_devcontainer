@@ -1,0 +1,32 @@
+services:
+  ollama-server:
+    name: ollama-server
+    description: "Start ollama server"
+    triggeredBy:
+      - manual
+      - postEnvironmentStart
+    commands:
+      start: |
+        cd /workspace/
+        ollama serve
+
+  gpu-stats:
+    name: gpu-stats
+    description: "GPU stats"
+    triggeredBy:
+      - manual
+    commands:
+      start: |
+        watch -n 1 nvidia-smi
+
+tasks:
+  run-llm:
+    name: Run LLM
+    description: "Start the PHI:3 model"
+    triggeredBy:
+      - postEnvironmentStart
+      - manual
+    command: |
+      sleep 60s # Hack to wait for ollama to start
+      cd /workspace/
+      ollama run phi3:medium
