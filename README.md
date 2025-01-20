@@ -80,3 +80,24 @@ jupyter notebook
 ```bash
 python my_script.py
 ```
+
+## Customization
+
+- Modify `.devcontainer/devcontainer.json` to change GPU requirements
+- Update `.devcontainer/Dockerfile` to add custom packages
+- Adjust environment class in Gitpod settings for different GPU types
+
+## Estimated Costs
+
+- g5.xlarge: ~$1/hour
+- Storage: $0.10/GB/month
+
+**Note:** Refer to AWS documentation for precise costs. 
+
+## Documentation
+
+For a full tutorial, check out: [https://www.gitpod.io/blog/gpu-dev-environments-on-aws](https://www.gitpod.io/blog/gpu-dev-environments-on-aws)
+
+Other helpful resources:
+- [Gitpod Documentation](https://www.gitpod.io/docs)
+- [Dev Container Specification](https://containers.dev)
