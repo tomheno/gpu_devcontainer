@@ -12,9 +12,32 @@ As a data scientist or ML engineer, you've likely faced the challenge of limited
 
 ## What's Included
 
-- `.devcontainer/` - Complete GPU-enabled development environment configuration
-  - `devcontainer.json` - Environment setup with NVIDIA CUDA support
-  - `Dockerfile` - Base container configuration using Ubuntu
+- `devcontainer.json` - Decalarative and repeatable environment setup including:
+  - NVIDIA CUDA support via features
+  - GPU requirements and access configuration
+  - VS Code Python and Jupyter extensions
+  - Python interpreter and formatting settings
+  - Automatic requirements.txt installation
+  - Kernel specification for Jupyter notebooks
+- `Dockerfile` - Base container configuration using Ubuntu with CUDA toolkit and Python packages, including: 
+  - Python 3.10 with virtual environment
+  - IPython kernel for Jupyter notebooks
+  - Ollama for LLM inference
+- `requirements.txt` - All Python dependencies installed including (but not limited to):
+  - NumPy (>=1.24.0)
+  - Pandas (>=2.0.0)
+  - Matplotlib (>=3.7.0)
+  - Seaborn (>=0.12.0)
+  - scikit-learn (>=1.3.0)
+  - Jupyter (>=1.0.0)
+  - IPython Kernel (>=6.0.0)
+  - Plotly (>=5.0.0)
+  - Plotly Express (>=0.4.0)
+  - nbformat (>=5.0.0)
+- `.gitpod/automations.yaml` - Gitpod automation examples 
+  - Starting the ollama server
+  - Seeing GPU stats of the environment
+  - Running Ollama LLM
 
 ## Quick Start
 
@@ -32,29 +55,28 @@ As a data scientist or ML engineer, you've likely faced the challenge of limited
   - CUDA Toolkit
   - Python 3.x
   - Common ML libraries (PyTorch, TensorFlow)
+  - Ollama for local inference
 
-## Verify Your Setup
+## Try It Out
 
-Once your environment is running:
+Once your environment is running, here are some things you can try:
 
+1. Run local inference with ollama:
+```bash
+ollama run phi3:medium
+```
+
+2. See nvidia GPU performance and stats:
 ```bash
 watch -n 1 nvidia-smi 
 ```
 
-## Customization
+3. Run a Jupyter notebook:
+```bash
+jupyter notebook
+```
 
-- Modify `.devcontainer/devcontainer.json` to change GPU requirements
-- Update `.devcontainer/Dockerfile` to add custom packages
-- Adjust environment class in Gitpod settings for different GPU types
-
-## Estimated Costs
-
-- g5.xlarge: ~$1/hour
-- Storage: $0.10/GB/month
-
-**Note:** Refer to AWS documentation for precise costs. 
-
-## Learn More
-
-- [Gitpod Documentation](https://www.gitpod.io/docs)
-- [Dev Container Specification](https://containers.dev)
+4. Execute a Python script:
+```bash
+python my_script.py
+```
