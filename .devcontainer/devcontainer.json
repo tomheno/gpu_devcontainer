@@ -21,9 +21,9 @@
 				"ms-toolsai.jupyter"
 			],
 			"settings": {
-				"python.defaultInterpreterPath": "/workspace/venv/bin/python",
-				"python.pythonPath": "/workspace/venv/bin/python",
-				"jupyter.pythonPath": "/workspace/venv/bin/python"
+				"python.defaultInterpreterPath": "/usr/bin/python3",
+				"python.formatting.provider": "black",
+				"jupyter.notebookFileRoot": "${workspaceFolder}"
 			}
 		}
 	},
