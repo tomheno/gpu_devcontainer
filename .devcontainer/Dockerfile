@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu
+FROM nvcr.io/nvidia/pytorch:24.03-py3
 
 # Install Ollama
 RUN curl -fsSL https://ollama.com/install.sh | TERM=xterm sh
