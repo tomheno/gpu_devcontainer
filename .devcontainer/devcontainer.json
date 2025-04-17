@@ -1,7 +1,7 @@
 {
 	"dockerFile": "Dockerfile",
 	"hostRequirements": {
-		"gpu": "optional"
+		"gpu": true
 	},
 	"runArgs": [
 		"--gpus=all",
